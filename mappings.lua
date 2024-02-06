@@ -22,9 +22,9 @@ return {
         local splits_count = vim.fn.winnr('$')
 
         if splits_count > 1 then
-          require("astronvim.utils.buffer").close()
+          vim.cmd(':q')
         else
-          vim.cmd(':bd')
+          require("astronvim.utils.buffer").close()
         end
       end,
       desc = "Close Window"

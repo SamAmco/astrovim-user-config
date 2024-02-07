@@ -9,24 +9,16 @@ return {
     -- second key is the lefthand side of the map
 
     -- navigate buffer tabs with `h` and `l`
-    ["<leader>l"] = {
+    ["<leader>."] = {
       function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
       desc = "Next buffer",
     },
-    ["<leader>h"] = {
+    ["<leader>,"] = {
       function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Previous buffer",
     },
-    ["<leader>q"] = { 
-      function()
-        local splits_count = vim.fn.winnr('$')
-
-        if splits_count > 1 then
-          vim.cmd(':q')
-        else
-          require("astronvim.utils.buffer").close()
-        end
-      end,
+    ["<leader>q"] = {
+      function() require("astronvim.utils.buffer").close() end,
       desc = "Close Window"
     },
 
@@ -44,8 +36,6 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-    ["<leader>ls"] = false,
-    ["<leader>lS"] = false,
   },
   t = {
     -- setting a mapping to false will disable it

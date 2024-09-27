@@ -18,6 +18,9 @@ return {
           auto_trigger = true,
           accept = false, -- disable built-in keymapping
         },
+        filetypes = {
+          markdown = true
+        }
       })
 
       -- hide copilot suggestions when cmp menu is open
